@@ -1,0 +1,9 @@
+<h1>{{ bank.name }}</h1>
+<p>{{ bank.description }}</p>
+<h2>Branches</h2>
+<ul>
+    {% for branch in branches %}
+        <li>{{ branch.name }} - <a href="{% url 'branch_details' branch.id %}">Details</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_branch' bank.id %}">Add Branch</a>

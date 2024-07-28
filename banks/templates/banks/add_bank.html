@@ -1,0 +1,16 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name of Bank:</label>
+    
+    <input type="text" name="name" required>
+    <label for="description">About Bank:</label>
+    <input type="text" name="description" required>
+    <label for="inst_num">Bank Number:</label>
+    <input type="text" name="inst_num" required>
+    <label for="swift_code">bank Code:</label>
+    <input type="text" name="swift_code" required>
+    <button type="submit">Add Bank</button>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+</form>
